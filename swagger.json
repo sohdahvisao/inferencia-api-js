@@ -1,0 +1,60 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Classification API",
+    "description": "API for image classification",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/octet-stream"
+  ],
+  "produces": [
+    "application/octet-stream"
+  ],
+  "paths": {
+    "/classification-image": {
+      "post": {
+        "summary": "Classify image",
+        "description": "Classifies the uploaded image",
+        "consumes": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "name": "image",
+            "in": "body",
+            "description": "Image to classify, as raw byte stream",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful classification",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "class": {
+                  "type": "string",
+                  "description": "The class of the image"
+                },
+                "confidence": {
+                  "type": "number",
+                  "description": "Confidence level of the classification"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
