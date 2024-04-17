@@ -23,6 +23,12 @@ Após estes comando sua aplicação deve estar rodando normalmemente, para confi
 
 E verifique se o container sv-inferencia está ativo.
 
+Rota:
+
+  - ```http
+    http://localhost:3000/api-docs
+    ```
+
 <hr>
 
 ## Documentação API
@@ -35,7 +41,7 @@ POST /classification-image
 
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `data` | `arquivo-base64` | **Obrigatório**. Imagem para classsificação |
+| `data` | `arquivo-base64` | **Obrigatório**. Imagem para classificação |
 
 #### Retorno
 ````
