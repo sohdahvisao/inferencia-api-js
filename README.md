@@ -12,7 +12,7 @@
     ````
 
   - ````docker
-    docker run --name sv-inferencia -dp 127.0.0.1:3000:3000 sv-inferencia
+    docker run --name sv-inferencia --restart unless-stopped -dp 127.0.0.1:3000:3000 sv-inferencia
     ````
 
 Após estes comando sua aplicação deve estar rodando normalmemente, para confirmar digite:
